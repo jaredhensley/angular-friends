@@ -59,7 +59,7 @@
         </div>
       </li>
 
-      <li class="friend " ng-repeat="friend in friends | filter: search | orderBy: stuff: bool">
+      <li class="friend " ng-repeat="friend in friends | filter: search | orderBy: stuff.value: bool">
         <img class=" profile-pic " ng-src={{friend.pic_square}}>
 
         <h3>{{friend.name}}</h3>
