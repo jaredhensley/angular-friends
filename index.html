@@ -29,7 +29,8 @@
         </select>-->
 
 
-        <select class="input-medium" ng-model="stuff" ng-options="thing.value as thing.name for thing in stuff">
+        <select class="input-medium" ng-model="stuffSelection" ng-options="thing.value as thing.name for thing in stuff">
+          <option style="display:none" value="">select a filter</option>
         </select>
 
         <select class="input-medium " ng-model="bool">
@@ -59,7 +60,7 @@
         </div>
       </li>
 
-      <li class="friend " ng-repeat="friend in friends | filter: search | orderBy: stuff.value: bool">
+      <li class="friend " ng-repeat="friend in friends | filter: search | orderBy: stuffSelection: bool">
         <img class=" profile-pic " ng-src={{friend.pic_square}}>
 
         <h3>{{friend.name}}</h3>
