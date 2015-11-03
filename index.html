@@ -20,17 +20,17 @@
         <input class="form-control " placeholder="Search Location " ng-model="search.current_location.$" ng-change="test()">
 
 
-        <select class="input-medium" ng-model="sort">
+        <!--<select class="input-medium" ng-model="sort">
           <option value="name">Name</option>
           <option value="friend_count">#Friends</option>
           <option value="current_location.city">City</option>
           <option value="current_location.state">State</option>
           <option value="current_location.country">Country</option>
+        </select>-->
+
+
+        <select class="input-medium" ng-model="stuff" ng-options="thing.value as thing.name for thing in stuff">
         </select>
-
-
-        <!--<select class="input-medium" ng-model="stuff" ng-options="thing.value as thing.name for thing in stuff">
-</select>-->
 
         <select class="input-medium " ng-model="bool">
           <option value="+">Descending</option>
@@ -59,7 +59,7 @@
         </div>
       </li>
 
-      <li class="friend " ng-repeat="friend in friends | filter: search | orderBy: sort: bool">
+      <li class="friend " ng-repeat="friend in friends | filter: search | orderBy: stuff: bool">
         <img class=" profile-pic " ng-src={{friend.pic_square}}>
 
         <h3>{{friend.name}}</h3>
